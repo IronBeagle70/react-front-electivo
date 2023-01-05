@@ -40,7 +40,8 @@ function Catalogue() {
                 <OneCatalogueItem />
                 <OneCatalogueItem />
             </AllCatalogueList>
-            <FooterComponent />
+            <FooterComponent footPosition={'sticky bottom-0'} /> 
+            {/* <FooterComponent footPosition={'absolute bottom-0'} /> */}
         </>
     );
 };

@@ -23,7 +23,7 @@ function Home() {
         <>
             <Header bgHeader={"bg-teal-300"} enlaces={HomeLinks} />
             <div className='bg-slate-700'>Home</div>
-            <FooterComponent />
+            <FooterComponent footPosition={"absolute bottom-0"} />
         </>
     );
 };

@@ -39,7 +39,7 @@ function Login() {
                     </div>
                 </form>
             </div>
-            <FooterComponent />
+            <FooterComponent footPosition={"absolute bottom-0"} />
         </>
     );
 };
