@@ -5,7 +5,7 @@ function Header({bgHeader, enlaces}) {
 
 
     return (
-        <header className={`${bgHeader} flex justify-between items-center w-full h-20 sm:h-12`}>
+        <header className={`${bgHeader} flex justify-between items-center w-full h-20 sm:h-12 sticky top-0`}>
             <p className='ml-2 sm:ml-4 font-semibold text-base sm:text-lg'>LOGO</p>
             {/* <img src="" alt="logo" /> */}
             {/* <p>HEADER HOME</p> */}
