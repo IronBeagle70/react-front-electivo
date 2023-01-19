@@ -16,11 +16,11 @@ function Catalogue() {
         {
             name: 'Inicio',
             path: '/'
+        },
+        {
+            name: 'Carrito de Compras',
+            path: '/shopping'
         }
-        // {
-        //     name: '',
-        //     path: ''
-        // }
     ];
 
     return (
