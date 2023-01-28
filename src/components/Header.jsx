@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Header({bgHeader, enlaces}) {
+import { FaShoppingCart } from "react-icons/fa";
+
+function Header({bgHeader, enlaces, iconCart, carrito, handleModal}) {
 
 
     return (
@@ -16,6 +18,14 @@ function Header({bgHeader, enlaces}) {
                             <div className='text-base sm:text-lg hover:text-slate-100 font-semibold'>{enlace.name}</div>
                         </NavLink>
                     ))
+                }
+                {
+                    iconCart && (
+                        <div onClick={handleModal} className='px-1 hover:text-slate-100 font-semibold flex justify-center items-center cursor-pointer'>
+                            <FaShoppingCart className='text-lg sm:text-xl' />
+                            <div className=' flex justify-center items-center text-white text-sm bg-red-600 rounded-full h-5 w-5 relative bottom-1'>{carrito.length}</div>
+                        </div>
+                    )
                 }
             </nav>
         </header>

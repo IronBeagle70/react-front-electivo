@@ -12,8 +12,15 @@ import Signup from './pages/Signup'
 import Data from './Data.js'; //DB simulator
 
 function App() {
+
+  //modal
+  const [open, setOpen] = useState(false); //modal state
+
+  const handleModal=()=>{
+    setOpen(!open);
+  };
   
-  const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]); // Data state
 
   useEffect(()=>{
     const producto = Data;
@@ -26,14 +33,35 @@ function App() {
 
   const value = {
     productos : [productos]
-  } 
+  }
+
+  const [getProductos] = value.productos; //get all Data 
+  
+  //shopping cart
+
+  const [carrito, setCarrito] = useState([]); //shopping cart state
+
+  const addCarrito=(id)=>{
+    const check = carrito.every(item =>{
+      return item.id !==id;
+    })
+    if (check) {
+      const data = getProductos.filter(producto => {
+        return producto.id === id
+      })
+        setCarrito([...carrito, ...data]);
+        console.log(data);
+    } else {
+      alert('El producto ha sido añadido')
+    }
+  }
 
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />}  />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/catalogue' element={<Catalogue dataProducts={value} />} />
+      <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} />} />
       <Route path='/shopping' element={<ShoppingCart />} />
       <Route path='/catalogue/:id' element={<ProductView dataProducts={value} />}   />
     </Routes>

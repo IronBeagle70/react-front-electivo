@@ -6,11 +6,11 @@ import Header from './Header';
 
 function ProductView({dataProducts}) {
 
-    const [productos] = dataProducts.productos;
+    const [productos] = dataProducts.productos; //get all Data
 
     const params = useParams();
 
-    const [show, setShow] = useState([]);
+    const [show, setShow] = useState([]); // show one Product state
 
     useEffect(()=>{
         productos.forEach(producto => {
