@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-function OneCatalogueItem({productId, productName, productPrice, productImage, handleModal, addVista}) {
+function OneCatalogueItem({productId, productName, productPrice, productImage, addCarrito}) {
 
     return (
         <>
@@ -9,10 +10,10 @@ function OneCatalogueItem({productId, productName, productPrice, productImage, h
                 <h2 className='font-bold mb-1 sm:mb-2 text-sm sm:text-base'>{productName}</h2>
                 <h3 className='font-semibold mb-1 sm:mb-2 text-sm sm:text-base'>${productPrice}</h3>
                 <div className='flex justify-between items-center font-semibold text-white'>
-                    <button onClick={()=>addVista(productId)} className='px-2 py-1 bg-blue-600 rounded text-sm sm:text-base'>Añadir al Carrito</button>
-                    <button onClick={handleModal} className='px-2 py-1 rounded bg-green-600 text-sm sm:text-base'>
+                    <button onClick={()=>addCarrito(productId)} className='px-2 py-1 bg-blue-600 rounded text-sm sm:text-base'>Añadir al Carrito</button>
+                    <NavLink to={`/catalogue/${productId}`} className='px-2 py-1 rounded bg-green-600 text-sm sm:text-base'>
                         Vista
-                    </button>
+                    </NavLink>
                 </div>
             </li>
         </>
