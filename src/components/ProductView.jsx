@@ -6,7 +6,7 @@ import Modal from './Modal';
 // import Modal from './Modal';
 import { FaTrashAlt, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
-function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito}) {
+function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito, removeCarrito}) {
 
     const [productos] = dataProducts.productos; //get all Data
 
@@ -76,7 +76,7 @@ function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito}
                                                         <FaMinusCircle className='text-xl sm:text-2xl text-red-700' />
                                                     </div>
                                                     <div>
-                                                        <FaTrashAlt className='text-2xl sm:text-4xl text-red-700'/>
+                                                        <FaTrashAlt onClick={()=>removeCarrito(oneCarrito.id)} className='text-2xl sm:text-4xl text-red-700'/>
                                                     </div>
                                                 </li>
                                             ))

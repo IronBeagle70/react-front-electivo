@@ -56,14 +56,25 @@ function App() {
     }
   }
 
+  const removeCarrito=(id)=>{
+    if(window.confirm('¿Desea eliminar el producto?')){
+      carrito.forEach((item, index)=>{
+        if(item.id === id){
+          carrito.splice(index,1)
+        }
+      })
+      setCarrito([...carrito]);
+    }
+  }
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />}  />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} />} />
+      <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} />} />
       <Route path='/shopping' element={<ShoppingCart />} />
-      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} />}   />
+      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} />}   />
     </Routes>
   )
 }

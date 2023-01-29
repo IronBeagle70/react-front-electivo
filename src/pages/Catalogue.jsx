@@ -9,7 +9,7 @@ import { FaTrashAlt, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 // import ProductView from '../components/ProductView';
 
 
-function Catalogue({dataProducts, handleModal, openModal, addCarrito, carrito}) {
+function Catalogue({dataProducts, handleModal, openModal, addCarrito, carrito, removeCarrito}) {
     // console.log(Data[0].id);
     const CatalogueLinks=[
         {
@@ -60,7 +60,7 @@ function Catalogue({dataProducts, handleModal, openModal, addCarrito, carrito}) 
                                                         <FaMinusCircle className='text-xl sm:text-2xl text-red-700' />
                                                     </div>
                                                     <div>
-                                                        <FaTrashAlt className='text-2xl sm:text-4xl text-red-700'/>
+                                                        <FaTrashAlt onClick={()=>removeCarrito(oneCarrito.id)} className='text-2xl sm:text-4xl text-red-700'/>
                                                     </div>
                                                 </li>
                                             ))
