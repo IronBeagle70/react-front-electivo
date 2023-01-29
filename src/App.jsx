@@ -63,7 +63,7 @@ function App() {
       <Route path='/signup' element={<Signup />} />
       <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} />} />
       <Route path='/shopping' element={<ShoppingCart />} />
-      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} />}   />
+      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} />}   />
     </Routes>
   )
 }
