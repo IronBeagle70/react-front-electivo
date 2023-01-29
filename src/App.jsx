@@ -23,13 +23,15 @@ function App() {
   const [productos, setProductos] = useState([]); // Data state
 
   useEffect(()=>{
-    const producto = Data;
+    const producto = Data.map(data=>{
+      return {...data, cantidad: 1}
+    });
     if(producto){
       setProductos(producto);
     } else {
       setProductos([]);
     };
-  });
+  },[]);
 
   const value = {
     productos : [productos]
@@ -47,6 +49,7 @@ function App() {
     })
     if (check) {
       const data = getProductos.filter(producto => {
+        // producto.cantidad =1;
         return producto.id === id
       })
         setCarrito([...carrito, ...data]);
@@ -67,14 +70,32 @@ function App() {
     }
   }
 
+  const sumCantidad = (id) => {
+    carrito.forEach(item=>{
+      if(item.id === id){
+        item.cantidad += 1;
+      }
+      setCarrito([...carrito]);
+    })
+  }
+
+  const resCantidad = (id) => {
+    carrito.forEach(item=>{
+      if(item.id === id){
+        item.cantidad===1 ? item.cantidad=1 :item.cantidad -= 1;
+      }
+      setCarrito([...carrito]);
+    })
+  }
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />}  />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} />} />
+      <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />} />
       <Route path='/shopping' element={<ShoppingCart />} />
-      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} />}   />
+      <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />}   />
     </Routes>
   )
 }

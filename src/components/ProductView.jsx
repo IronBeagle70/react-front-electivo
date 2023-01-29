@@ -6,7 +6,7 @@ import Modal from './Modal';
 // import Modal from './Modal';
 import { FaTrashAlt, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
-function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito, removeCarrito}) {
+function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito, removeCarrito, sumCantidad, resCantidad}) {
 
     const [productos] = dataProducts.productos; //get all Data
 
@@ -71,9 +71,9 @@ function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito,
                                                         <h3 className='font-semibold text-center sm:text-left text-sm sm:text-base md:text-lg'>${oneCarrito.precio}</h3>
                                                     </div>
                                                     <div className='flex flex-col justify-center items-center'>
-                                                        <FaPlusCircle className='text-xl sm:text-2xl text-red-700' />
-                                                        <p className='font-semibold text-center sm:text-left text-sm sm:text-base md:text-lg'>13</p>
-                                                        <FaMinusCircle className='text-xl sm:text-2xl text-red-700' />
+                                                        <FaPlusCircle onClick={()=>sumCantidad(oneCarrito.id)} className='text-xl sm:text-2xl text-red-700' />
+                                                        <p className='font-semibold text-center sm:text-left text-sm sm:text-base md:text-lg'>{oneCarrito.cantidad}</p>
+                                                        <FaMinusCircle onClick={()=>resCantidad(oneCarrito.id)} className='text-xl sm:text-2xl text-red-700' />
                                                     </div>
                                                     <div>
                                                         <FaTrashAlt onClick={()=>removeCarrito(oneCarrito.id)} className='text-2xl sm:text-4xl text-red-700'/>
