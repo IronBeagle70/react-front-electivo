@@ -53,9 +53,9 @@ function App() {
         return producto.id === id
       })
         setCarrito([...carrito, ...data]);
-        console.log(data);
+        // console.log(data);
     } else {
-      alert('El producto ha sido añadido')
+      alert('El producto ya está añadido en el carrito')
     }
   }
 
@@ -63,6 +63,7 @@ function App() {
     if(window.confirm('¿Desea eliminar el producto?')){
       carrito.forEach((item, index)=>{
         if(item.id === id){
+          item.cantidad=1;
           carrito.splice(index,1)
         }
       })
@@ -88,13 +89,25 @@ function App() {
     })
   }
 
+  const [total, setTotal] = useState(0);
+
+  useEffect(()=>{
+    const getTotal = () => {
+      const res = carrito.reduce((prev, item)=>{
+        return prev + (parseInt(item.precio)*parseInt(item.cantidad))
+      },0)
+      setTotal(res)
+    }
+    getTotal()
+  },[carrito])
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />}  />
       <Route path='/signup' element={<Signup />} />
       <Route path='/catalogue' element={<Catalogue dataProducts={getProductos} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />} />
-      <Route path='/shopping' element={<ShoppingCart />} />
+      <Route path='/shopping' element={<ShoppingCart carrito={carrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} handleModal={handleModal} openModal={open} total={total} />} />
       <Route path='/catalogue/:id' element={<ProductView dataProducts={value} handleModal={handleModal} openModal={open} carrito={carrito} addCarrito={addCarrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />}   />
     </Routes>
   )

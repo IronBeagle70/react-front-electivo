@@ -19,7 +19,6 @@ function Login() {
     return (
         <>
             <Header bgHeader={"bg-green-500"} enlaces={LoginLinks}/>
-            <div className='bg-slate-700 '>Login</div>
             <div className="w-full max-w-xs m-auto">
                 {/* {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2 text-center text-sm" role="alert" ><span className="sm:inline block" >{error}</span></div> } */}
                 <form  className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" >
