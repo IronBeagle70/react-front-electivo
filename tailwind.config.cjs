@@ -13,9 +13,6 @@ module.exports = {
         'bg-react':'#00D8FF',
         'bg-fb':'#3B579D'
       }
-    },
-    screens: {
-      'phone':'430px'
     }
   },
   plugins: [],
