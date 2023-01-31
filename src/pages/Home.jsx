@@ -30,7 +30,7 @@ function Home() {
                     <h1 className='text-lg sm:text-xl md:text-2xl text-center font-semibold mr-1 sm:mr-2'>Static Shopping Cart with </h1>
                     <FaReact className='text-5xl  sm:text-6xl md:text-7xl text-bg-react rotate-infinite' />
                 </div>
-                <img src="/public/wallpaperSC.jpg" className='w-[400px] mx-auto' alt="wallpaper_home" />
+                <img src="https://raw.githubusercontent.com/IronBeagle70/react-front-electivo/main/public/wallpaperSC.jpg" className='w-[400px] mx-auto' alt="wallpaper_home" />
                 <NavLink to={'/catalogue'} className='px-2 py-1 rounded bg-blue-600 text-base sm:text-lg md:text-xl font-semibold text-white hover:bg-blue-700 hover:text-blue-100 active:bg-blue-500'>
                     Ir al Catálogo
                 </NavLink>
