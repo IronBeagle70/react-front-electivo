@@ -2,9 +2,9 @@ import React, {useState ,useEffect} from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import FooterComponent from './FooterComponent';
 import Header from './Header';
-import Modal from './Modal';
 // import Modal from './Modal';
-import { FaTrashAlt, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+// import Modal from './Modal';
+// import { FaTrashAlt, FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 import Scart from './Scart';
 
 function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito, removeCarrito, sumCantidad, resCantidad}) {

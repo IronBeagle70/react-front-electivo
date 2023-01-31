@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import FooterComponent from '../components/FooterComponent';
+// import FooterComponent from '../components/FooterComponent';
 import Header from '../components/Header';
 
 import { FaLinkedin, FaGithub, FaReact } from "react-icons/fa";
