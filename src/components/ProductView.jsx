@@ -56,7 +56,7 @@ function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito,
             {openModal && (
                 <Scart handleModal={handleModal} carrito={carrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />
             )}
-            <FooterComponent footPosition={'absolute phone:sticky bottom-0'} />
+            {/* <FooterComponent footPosition={'absolute phone:sticky bottom-0'} /> */}
         </>
     );
 };
