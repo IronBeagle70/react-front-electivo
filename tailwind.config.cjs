@@ -14,6 +14,9 @@ module.exports = {
         'bg-fb':'#3B579D'
       }
     },
+    screens: {
+      'phone':'430px'
+    }
   },
   plugins: [],
 }
