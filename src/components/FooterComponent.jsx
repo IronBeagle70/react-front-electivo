@@ -4,7 +4,7 @@ import { FaRegCopyright, FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons
 
 function FooterComponent({footPosition}) {
     return (
-        <footer className={`bg-green-700 w-full  flex flex-wrap items-center justify-evenly ${footPosition} py-2 sm:py-3 `}>
+        <footer className={`bg-green-700 w-full  flex flex-wrap items-center justify-evenly ${footPosition} py-2 sm:py-3 mt-4`}>
             <div className='flex items-center justify-between text-xl sm:text-2xl w-28 sm:w-40 mx-1'>
                 <a href="#" target="_blank" rel="noopener noreferrer" className='w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-100 flex items-center justify-center text-bg-fb hover:bg-blue-200 hover:text-blue-600 active:text-blue-700' >
                     <FaFacebookF /> 
