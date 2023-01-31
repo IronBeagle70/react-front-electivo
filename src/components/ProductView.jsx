@@ -45,7 +45,7 @@ function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito,
             <Header bgHeader={"bg-green-500"} enlaces={ProductsViewLinks} iconCart={true} carrito={carrito} handleModal={handleModal}/>
             <div className='bg-white shadow-md rounded p-3 sm:p-4 flex flex-col max-w-[1000px]  mx-4 lg:mx-auto mt-4 md:mt-6'>
                 <h2 className='font-bold mb-2 sm:mb-3 text-base sm:text-lg lg:text-xl text-center'>{show.title}</h2>
-                <img src={show.image} alt="img_producto" className='max-h-64 md:max-h-72 mb-2 sm:mb-3 lg:max-h-[350px]' />
+                <img src={show.image} alt="img_producto" className=' mb-2 sm:mb-3 w-[450px] mx-auto' />
                 <h3 className='font-semibold mb-1 sm:mb-2 text-sm sm:text-base'><span className='font-bold mb-1 sm:mb-2 text-sm sm:text-base'>Descripción: </span>{show.description}</h3>
                 <h4 className='font-semibold mb-1 sm:mb-2 text-sm sm:text-base'>${show.precio}</h4>
                 <div className='flex justify-evenly items-center font-semibold text-white'>
@@ -56,7 +56,7 @@ function ProductView({dataProducts, carrito, handleModal, openModal, addCarrito,
             {openModal && (
                 <Scart handleModal={handleModal} carrito={carrito} removeCarrito={removeCarrito} sumCantidad={sumCantidad} resCantidad={resCantidad} />
             )}
-            <FooterComponent footPosition={'absolute bottom-0'} />
+            <FooterComponent footPosition={'sticky bottom-0'} />
         </>
     );
 };

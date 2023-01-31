@@ -38,7 +38,7 @@ function Home() {
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/alvaro-mateo-mendoza-capcha-27907a248/">
                         <FaLinkedin className='text-bg-linkedin hover:text-blue-600 active:text-blue-700' />
                     </a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/IronBeagle70">
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/IronBeagle70/react-front-electivo">
                         <FaGithub className='text-bg-github hover:text-stone-800 active:text-stone-900 ' />
                     </a>
                 </div>
